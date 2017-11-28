@@ -10,9 +10,10 @@ h1{
 	color: #F21313;
 	font-weight: bold;
 	font-family: 'Mountains of Christmas', cursive;
+	text-shadow: 2px 1px white;
 	width: 30%;
 	background-color: #4c991a;
-	border:dashed red 2px;
+	border:dashed red 3px;
 	border-radius: 40px;
 	padding:10px;
 	margin: 10px auto;
