@@ -8,9 +8,52 @@
 	<title>Holiday Hangman</title>
 </head>
 <body>
-	<main>
+	<header>
 		<h1 class="text-center">Holiday Hangman</h1>
+	</header>
+	
+	<main class="container">
+		<div class="left">
+			<div class="1">
+				<button>A</button>
+				<button>B</button>
+				<button>C</button>
+				<button>D</button>
+				<button>E</button>
+				<button>F</button>
+				<button>G</button>
+				<button>H</button>
+				<button>I</button>
+				<button>J</button>
+				<button>K</button>
+				<button>L</button>
+				<button>M</button>
+				<button>N</button>
+				<button>O</button>
+				<button>P</button>
+				<button>Q</button>
+				<button>R</button>
+				<button>S</button>
+				<button>T</button>
+				<button>U</button>
+				<button>V</button>
+				<button>W</button>
+				<button>X</button>
+				<button>Y</button>
+				<button>Z</button>
+			</div>
+		</div>
+
+		<div class="mid">
+			<h1 id="lines">Random Word</h1>
+		</div>
+
+		<div class="right">
+			<h1>build out</h1>
+		</div>
+
 	</main>
+
 <script type="text/javascript">
 
 //add list of holiday words//
@@ -28,7 +71,29 @@ var word =[ 'bells', 'blitzen', 'candy_canes', 'cards', 'chimney', 'comet',
 //note that underscore and spaces count as length//
  var answerLetters = answer.length;
 
- 
+ //create underline or underscore in HTML that matches var answerLetters//
+
+ //Get user input//
+ var playerGuess = event.key;
+
+ //See if user input matches any letters in var answer//
+
+ //display matching letters in Dom//
+
+ //create user total guesses//
+ var totalGuess = 10;
+
+ //If letters do not match subtract one guess//
+
+ //if all letters are filled in correct, you win, restart game.
+
+ //if remaining guess are === 0, alert, try again//
+
+ //if remaining guess are >0 allow for additional imput//
+
+ //Create button to restart game//
+
+
 
 
 
