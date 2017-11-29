@@ -5,12 +5,37 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas:700" rel="stylesheet">
-	<title>Christmas Hangman</title>
+	<title>Holiday Hangman</title>
 </head>
 <body>
 	<main>
-		<h1 class="text-center">Christmas Hangman</h1>
+		<h1 class="text-center">Holiday Hangman</h1>
 	</main>
+<script type="text/javascript">
 
+//add list of holiday words//
+var word =[ 'bells', 'blitzen', 'candy_canes', 'cards', 'chimney', 'comet', 
+'dancer', 'dasher', 'donner', 'eggnog', 'elves', 'goodwill', 'merry',
+'mistletoe', 'north_pole', 'lights', 'jolly', 'icicles', 'prancer',
+'pine', 'poinsettia', 'presents', 'reindeer', 'rudolph', 'santa', 
+'scrooge', 'sled', 'snowflakes', 'wrapping_paper', 'wreath', 'yule',
+ 'winter', 'toys', 'tinsel', 'stocking', 'star'];
+
+ //Generate random words using index, random and floor//
+ var answer = word[Math.floor(Math.random()* word.length)];
+
+ //find number of letters in var answer//
+//note that underscore and spaces count as length//
+ var answerLetters = answer.length;
+
+ 
+
+
+
+ console.log(answer);
+ console.log(answerLetters);
+	
+
+</script>
 </body>
 </html>
