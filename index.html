@@ -45,7 +45,7 @@
 		</div>
 
 		<div class="mid">
-			<h1 id="lines">Random Word</h1>
+			<h1 id="lines"></h1>
 		</div>
 
 		<div class="right">
@@ -54,53 +54,6 @@
 
 	</main>
 
-<script type="text/javascript">
-
-//add list of holiday words//
-var word =[ 'bells', 'blitzen', 'candy_canes', 'cards', 'chimney', 'comet', 
-'dancer', 'dasher', 'donner', 'eggnog', 'elves', 'goodwill', 'merry',
-'mistletoe', 'north_pole', 'lights', 'jolly', 'icicles', 'prancer',
-'pine', 'poinsettia', 'presents', 'reindeer', 'rudolph', 'santa', 
-'scrooge', 'sled', 'snowflakes', 'wrapping_paper', 'wreath', 'yule',
- 'winter', 'toys', 'tinsel', 'stocking', 'star'];
-
- //Generate random words using index, random and floor//
- var answer = word[Math.floor(Math.random()* word.length)];
-
- //find number of letters in var answer//
-//note that underscore and spaces count as length//
- var answerLetters = answer.length;
-
- //create underline or underscore in HTML that matches var answerLetters//
-
- //Get user input//
- var playerGuess = event.key;
-
- //See if user input matches any letters in var answer//
-
- //display matching letters in Dom//
-
- //create user total guesses//
- var totalGuess = 10;
-
- //If letters do not match subtract one guess//
-
- //if all letters are filled in correct, you win, restart game.
-
- //if remaining guess are === 0, alert, try again//
-
- //if remaining guess are >0 allow for additional imput//
-
- //Create button to restart game//
-
-
-
-
-
- console.log(answer);
- console.log(answerLetters);
-	
-
-</script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
