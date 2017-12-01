@@ -36,18 +36,23 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  //Get user input//
  document.onkeyup = function(event) {
  	var userGuess = event.key;
- 	console.log(userGuess);	
 
- 	//See if user input matches any letters in var answer//
- 	if (userGuess === answerLetters[0]){
- 	console.log('you guessed right');
+ 	for( var i = 0; i < answer.length; i++){
+ 		//See if user input matches letter1//
+ 	if (userGuess === answerLetters[i]);{
+ 		//replace dash 1//
+ 		dashes[i] = userGuess;
+ 		//wrong answer take away remaining guess//
  	} else {
- 		console.log('you guessed wrong');
- 	}
-
-
+ 		promomt('guess again')
+ }
 
 }
+ 
+ //String prototype indexOf function//
+
+
+
 
 
  
@@ -70,7 +75,5 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
 
  //Create button to restart game//
 
-var alpa = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n',
- 'o','p','q','r','s','t','u','v','w','x','y','z']
 
 
