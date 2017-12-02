@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test js</title>
+</head>
+<body>
+			<script type="text/javascript">
+						// Word Choices
+						var words =["angels","bells","Blitzen","candles","candy","cards","cedar","celebrate","chimney","cold","Comet","cookies","Cupid","Dancer","Dasher","December","decorations","dolls","Donner","dressing","eggnog","elves","family","festival","Frosty","fruitcake","gifts","goodwill","greetings","happy","holiday","holly","holy","icicles","jolly","lights","lists","merry","miracle","mistletoe","Noel","pageant","parades","party","pie","pine","poinsettia","Prancer","presents","pudding","pumpkin pie","punch","reindeer","ribbon","Rudolph","sacred","sales","Scrooge","season","sled","sleigh","snowflakes","spirit","star","stickers","stocking","tidings","tinsel","togetherness","toys","tradition","traffic","tree","trips","turkey","vacation","Vixen","Winter","worship","wreath","yule","yuletide","Santa"];
+						
+						  // Pick a random word
+						    var word = words[Math.floor(Math.random() * words.length)];
+						    	console.log(word);
+						    // Set up the answer array
+						    var answerArray = [];
+						    for (var i = 0; i < word.length; i++) {
+						      answerArray[i] = "_";
+						    }
+						    console.log(answerArray);
+						    var remainingLetters = word.length;
+						    console.log(remainingLetters);
+						   
+ 					document.onkeyup = function() {
+ 						var guess = event.key;
+ 						console.log(guess);
+
+
+
+
+
+
+
+
+
+
+
+
+ 						
+
+						 if (remainingLetters > 0) {
+						 	 // document.getElementById("game").innerHTML = answerArray.join(" ");
+						 	 
+						 	   for (var j = 0; j < word.length; j++) {
+						          if (word[j] === guess) {
+						            answerArray[j] = guess;
+						            remainingLetters--;
+						        }
+						       }
+						      }
+						  }
+						       
+     
+						    
+											      
+					    
+    </script>
+
+</body>
+
+</html>
+
+
+					</script>
+</body>
+</html>

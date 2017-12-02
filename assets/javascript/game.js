@@ -11,6 +11,8 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  var answer = word[Math.floor(Math.random()* word.length)];
 
  console.log(answer);
+
+ var totalGuess = 6;
  
 
  //find number of letters in var answer//
@@ -28,42 +30,50 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  }
 
 //create array with letters in it//
- var answerLetters =[];
- for (var i = 0; i < answerLength; i++){
- 	console.log(answer[i]);
- }
+ var answerLetters = answer.split([]);
+
+ 
 
  //Get user input//
- document.onkeyup = function(event) {
- 	var userGuess = event.key;
+	 document.onkeyup = function() {
+	 	var userGuess = event.key;
 
- 	for( var i = 0; i < answer.length; i++){
- 		//See if user input matches letter1//
- 	if (userGuess === answerLetters[i]);{
- 		//replace dash 1//
- 		dashes[i] = userGuess;
- 		//wrong answer take away remaining guess//
- 	} else {
- 		promomt('guess again')
- }
+ 	//create array for matching letter indices]
+ 	var indices = [];
+ 	//find index match of user guess//
+ 	var idx = answerLetters.indexOf(userGuess);
 
+ 	if ( idx === -1){
+		//If letters do not match subtract one guess//
+		totalGuess = totalGuess -1;
+	} else {
+		console.log('you right');
+	}
+
+ 	//Loop throught to find all instances of user guess//
+ 	while (idx != -1) {
+ 		//push index to array for storage//
+  		dashes[idx] = userGuess;
+  		//incrementing idx by 1 to check next index//
+ 		 idx = answerLetters.indexOf(userGuess, idx + 1);		
+	}
+
+	
+
+ 	console.log(indices);
+ 	console.log(dashes);
+ 	console.log(totalGuess);
+ 	
 }
- 
- //String prototype indexOf function//
 
 
-
-
-
- 
- // var match = str.match(userGuess);
 
  //display matching letters in Dom//
 
- //create user total guesses//
- var totalGuess = 10;
-
- //If letters do not match subtract one guess//
+if ( dashes.join === answer){
+	console.log('game over')
+}
+ 
 
 
 
