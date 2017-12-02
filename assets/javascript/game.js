@@ -29,6 +29,7 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  	dashes.push(dash);
  }
 
+
 //create array with letters in it//
  var answerLetters = answer.split([]);
 
@@ -43,19 +44,22 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  	//find index match of user guess//
  	var idx = answerLetters.indexOf(userGuess);
 
- 	if ( idx === -1){
-		//If letters do not match subtract one guess//
-		totalGuess = totalGuess -1;
-	} else {
-		console.log('you right');
-	}
-
  	//Loop throught to find all instances of user guess//
  	while (idx != -1) {
  		//push index to array for storage//
   		dashes[idx] = userGuess;
   		//incrementing idx by 1 to check next index//
  		 idx = answerLetters.indexOf(userGuess, idx + 1);		
+	}
+
+		if (dashes.join('') === answer){
+		alert('You Win');
+
+ 	} else if ( idx === -1){
+		//If letters do not match subtract one guess//
+		totalGuess = totalGuess -1;
+	}  else {
+		console.log('you right');
 	}
 
 	
@@ -66,13 +70,15 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  	
 }
 
+var display = dashes.join('');
+
+//dashes to html//
+document.getElementById('lines').innerHTML = display;
+
 
 
  //display matching letters in Dom//
 
-if ( dashes.join === answer){
-	console.log('game over')
-}
  
 
 
