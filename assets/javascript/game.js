@@ -29,6 +29,9 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  	dashes.push(dash);
  }
 
+ var display = dashes.join('');	
+ document.getElementById('lines').innerHTML = display;
+
 
 //create array with letters in it//
  var answerLetters = answer.split([]);
@@ -36,8 +39,9 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  
 
  //Get user input//
-	 document.onkeyup = function() {
-	 	var userGuess = event.key;
+	 
+document.onkeyup = function() {
+	 var userGuess = event.key;
 
  	//create array for matching letter indices]
  	var indices = [];
@@ -49,20 +53,26 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  		//push index to array for storage//
   		dashes[idx] = userGuess;
   		//incrementing idx by 1 to check next index//
- 		 idx = answerLetters.indexOf(userGuess, idx + 1);		
-	}
+ 		 idx = answerLetters.indexOf(userGuess, idx + 1);
+ 		 var display = dashes.join('');
 
+	}
+		document.getElementById('lines').innerHTML = display;
 		if (dashes.join('') === answer){
 		alert('You Win');
+		} else if ( totalGuess === 1){
+		alert('You Lose');
 
- 	} else if ( idx === -1){
-		//If letters do not match subtract one guess//
+ 		} else if ( idx === -1){
+				//If letters do not match subtract one guess//
 		totalGuess = totalGuess -1;
-	}  else {
-		console.log('you right');
+		}  else {
+		console.log('right');
+
+
 	}
 
-	
+
 
  	console.log(indices);
  	console.log(dashes);
@@ -70,10 +80,9 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  	
 }
 
-var display = dashes.join('');
 
-//dashes to html//
-document.getElementById('lines').innerHTML = display;
+
+
 
 
 

@@ -51,18 +51,31 @@ h1{
 }
 
 .right{
-	height: 500px;
+	height: 400px;
 	background-color: #4c991a;
 	border:dashed red 3px;
 	border-radius: 40px;
 }
 
+#hang1{
+	width: 90%;
+	height: auto;
+	margin: 10px 15px;
+	border-radius: 30px;
+}
+
+.clear{
+	clear: both;
+	width: 80%;
+	margin: auto;
+}
+
 
 button{
 	background-color: #4c991a;
-	height: 70px;
-	width: 70px;
-	padding: 20px;
+	height: 60px;
+	width: 60px;
+	padding: 15px;
 	margin: 5px;
 	font-size: 25px;
 }
