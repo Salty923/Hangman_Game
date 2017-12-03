@@ -5,16 +5,23 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas:700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<title>Holiday Hangman</title>
 </head>
 <body>
 	<header>
-		<h1 class="text-center">Holiday Hangman</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="xmstyle text-center">Holiday Hangman</h1>
+				</div>
+			</div>
+		</div>
 	</header>
 	
 	<main class="container">
-		<div class="left">
-			<div class="1">
+		<div class="row">
+			<div class="col-md-4">
 				<button>A</button>
 				<button>B</button>
 				<button>C</button>
@@ -42,21 +49,16 @@
 				<button>Y</button>
 				<button>Z</button>
 			</div>
-		</div>
-
-		<div class="mid">
-			<h1 id="lines"></h1>
-		</div>
-
-		<div class="right">
+			<div class="col-md-4">
+				<h1 class="xmstyle text-center" id="Guesses Remaing">Guesses Remaining <span id="remaining">0</span></h1>
+				<h1 class="xmstyle text-center" id="lines"></h1>
+				<h1 class="xmstyle text-center" id="lost">wins <span id="wins">0</span></h1>
+				<h1 class="xmstyle text-center" id="lost">losses <span id="losses"></span></h1>
+			</div>
+			<div class="col-md-4">			
 				<img id= hang1 src="assets/images/Hang6.png">
+			</div>
 		</div>
-
-		<div class="clear">
-			<h2>Remaining Guesses</h2>
-			<h1 id="score"></h1>
-		</div>
-
 	</main>
 
 <script type="text/javascript" src="assets/javascript/game.js"></script>

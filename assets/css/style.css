@@ -13,18 +13,21 @@ body{
 
 }
 
+#remaining{
+	font-size: 50px;
+}
+
 .container{
 	max-width: 1000px;
 	margin: 0px auto;
 }
 
-h1{
+.xmstyle{
 	font-size: 50px;
 	color: #F21313;
 	font-weight: bold;
 	font-family: 'Mountains of Christmas', cursive;
 	text-shadow: 2px 1px white;
-	width: 30%;
 	background-color: #4c991a;
 	border:dashed red 3px;
 	border-radius: 40px;
@@ -32,42 +35,11 @@ h1{
 	margin: 10px auto;
 }
 
-.text-center{
-	text-align: center;
-}
-
-.left , .mid, .right {
-	width: 33.33%;
-	float: left;
-}
-
-.left, .right{
-	margin-top: 50px;
-}
-
-.mid{
-	margin-top: 200px;
-
-}
-
-.right{
-	height: 400px;
-	background-color: #4c991a;
-	border:dashed red 3px;
-	border-radius: 40px;
-}
-
 #hang1{
 	width: 90%;
 	height: auto;
 	margin: 10px 15px;
 	border-radius: 30px;
-}
-
-.clear{
-	clear: both;
-	width: 80%;
-	margin: auto;
 }
 
 

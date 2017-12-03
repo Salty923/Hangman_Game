@@ -31,6 +31,7 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
 
  var display = dashes.join('');	
  document.getElementById('lines').innerHTML = display;
+ document.getElementById('remaining').innerHTML = totalGuess;
 
 
 //create array with letters in it//
@@ -42,6 +43,7 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
 	 
 document.onkeyup = function() {
 	 var userGuess = event.key;
+
 
  	//create array for matching letter indices]
  	var indices = [];
@@ -56,11 +58,13 @@ document.onkeyup = function() {
  		 idx = answerLetters.indexOf(userGuess, idx + 1);
  		 var display = dashes.join('');
 
+
 	}
 		document.getElementById('lines').innerHTML = display;
+		document.getElementById('remaining').innerHTML = totalGuess;
 		if (dashes.join('') === answer){
 		alert('You Win');
-		} else if ( totalGuess === 1){
+		} else if ( totalGuess === 0){
 		alert('You Lose');
 
  		} else if ( idx === -1){
