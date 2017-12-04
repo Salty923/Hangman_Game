@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas:700" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
 	<title>Holiday Hangman</title>
 </head>
 <body>
@@ -21,38 +22,14 @@
 	
 	<main class="container">
 		<div class="row">
-			<div class="col-md-4">
-				<button>A</button>
-				<button>B</button>
-				<button>C</button>
-				<button>D</button>
-				<button>E</button>
-				<button>F</button>
-				<button>G</button>
-				<button>H</button>
-				<button>I</button>
-				<button>J</button>
-				<button>K</button>
-				<button>L</button>
-				<button>M</button>
-				<button>N</button>
-				<button>O</button>
-				<button>P</button>
-				<button>Q</button>
-				<button>R</button>
-				<button>S</button>
-				<button>T</button>
-				<button>U</button>
-				<button>V</button>
-				<button>W</button>
-				<button>X</button>
-				<button>Y</button>
-				<button>Z</button>
+			<div class="col-md-4 xmstyle">
+				<h1 class="text-center">Letters Guessed</h1>
+				<span id="guessed"></span>
 			</div>
 			<div class="col-md-4">
 				<h1 class="xmstyle text-center" id="Guesses Remaing">Guesses Remaining <span id="remaining">0</span></h1>
 				<h1 class="xmstyle text-center" id="lines"></h1>
-				<h1 class="xmstyle text-center" id="lost">wins <span id="wins">0</span></h1>
+				<h1 class="xmstyle text-center" id="lost">wins <span id="wins"></span></h1>
 				<h1 class="xmstyle text-center" id="lost">losses <span id="losses"></span></h1>
 			</div>
 			<div class="col-md-4">			

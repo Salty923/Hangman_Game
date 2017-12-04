@@ -13,6 +13,10 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  console.log(answer);
 
  var totalGuess = 6;
+
+ var wins = 0;
+
+ var losses = 0;
  
 
  //find number of letters in var answer//
@@ -32,7 +36,8 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  var display = dashes.join('');	
  document.getElementById('lines').innerHTML = display;
  document.getElementById('remaining').innerHTML = totalGuess;
-
+ document.getElementById('wins').innerHTML = wins;
+ document.getElementById('losses').innerHTML = losses;
 
 //create array with letters in it//
  var answerLetters = answer.split([]);
@@ -40,9 +45,10 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  
 
  //Get user input//
-	 
-document.onkeyup = function() {
-	 var userGuess = event.key;
+	var all = [];	 
+	document.onkeyup = function() {
+    var userGuess = event.key;
+	document.getElementById('guessed').innerHTML = all;
 
 
  	//create array for matching letter indices]
@@ -57,31 +63,24 @@ document.onkeyup = function() {
   		//incrementing idx by 1 to check next index//
  		 idx = answerLetters.indexOf(userGuess, idx + 1);
  		 var display = dashes.join('');
-
-
 	}
+		
 		document.getElementById('lines').innerHTML = display;
 		document.getElementById('remaining').innerHTML = totalGuess;
 		if (dashes.join('') === answer){
-		alert('You Win');
+			wins = wins + 1;
+			document.getElementById('wins').innerHTML = wins;
 		} else if ( totalGuess === 0){
-		alert('You Lose');
+			losses = losses + 1;
+			document.getElementById('losses').innerHTML = losses;
+		}
 
- 		} else if ( idx === -1){
+ 	if ( idx === -1){
 				//If letters do not match subtract one guess//
 		totalGuess = totalGuess -1;
-		}  else {
+	}else {
 		console.log('right');
-
-
-	}
-
-
-
- 	console.log(indices);
- 	console.log(dashes);
- 	console.log(totalGuess);
- 	
+ 	}
 }
 
 
