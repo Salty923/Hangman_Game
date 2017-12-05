@@ -22,22 +22,29 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  //create array for matching letter indices]
  var indices = [];
  
-
  //find number of letters in var answer//
 //note that underscore and spaces count as length//
  var answerLength = answer.length;
 
- console.log(answerLength);
+ //Get user input//
+var allGuess = [];
 
  //create underline or underscore in HTML that matches var answerLetters//
  var dashes =[];
+
+
+
  var dash = "_";
+ 
+
  for (var i = 0; i < answerLength; i++){
  	//put dashes in HTML//
  	dashes.push(dash);
  	 }
 
  var display = dashes.join('');	
+
+
  document.getElementById('lines').innerHTML = display;
  document.getElementById('remaining').innerHTML = totalGuess;
  document.getElementById('wins').innerHTML = wins;
@@ -45,23 +52,44 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
 
 //create array with letters in it//
  var answerLetters = answer.split([]);
- console.log(answerLetters);
+ 
 
- //Get user input//
-	var allGuess = [];	 
+ function reset(){
+ 	totalGuess = 6;
+ 	message.innerHTML = "Good Luck!";
+ 	var answer = word[Math.floor(Math.random()* word.length)];
+ 	allGuess = [];
+ 	document.getElementById('guessed').innerHTML = allGuess;
+ 	document.getElementById('remaining').innerHTML = totalGuess;
+ 	document.getElementById('lines').innerHTML = display;
+
+ }
+
+
+
+
 	document.onkeyup = function() {
     var userGuess = event.key;
 	document.getElementById('guessed').innerHTML = allGuess;
 	console.log(allGuess);
 
-
+	
  	
  	//find index match of user guess//
  	var idx = answerLetters.indexOf(userGuess);
 
  	if ( idx  === -1){
 			totalGuess -- ;
-			message.innerHTML = " Try again";
+			document.getElementById('remaining').innerHTML = totalGuess;
+			allGuess.push(userGuess);
+			document.getElementById('guessed').innerHTML = allGuess;
+			message.innerHTML = " Guess again";
+
+		 if ( totalGuess === 0){
+			losses ++;
+			document.getElementById('losses').innerHTML = losses;
+			reset();
+		}
 	}
 
  	//Loop throught to find all instances of user guess//
@@ -76,23 +104,21 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
 		if (dashes.join('') === answer){
 			wins ++;
 			document.getElementById('wins').innerHTML = wins;
-			alert('youwin');
-		} else if ( totalGuess === 0){
-			losses ++;
-			document.getElementById('losses').innerHTML = losses;
-			alert('you lose');
+			reset();
 
 		} else{
 			allGuess.push(userGuess);
 			document.getElementById('guessed').innerHTML = allGuess;
-			message.innerHTML = "Keep it going!"
+			message.innerHTML = "Keep it going!";
 		}
 		idx = answerLetters.indexOf(userGuess, idx + 1);
 }
 
-}
+};
 
-
+document.getElementById("playAgain").onclick = function() {
+   reset();
+};
 
 
 

@@ -13,6 +13,10 @@ body{
 
 }
 
+.audio{
+	display: none;
+}
+
 #remaining{
 	font-size: 50px;
 }
@@ -52,7 +56,7 @@ button{
 	font-size: 25px;
 }
 
-#reset{
+#playAgain{
 	width: 100%;
 	height: 100px;
 }
