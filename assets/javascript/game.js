@@ -32,8 +32,6 @@ var allGuess = [];
  //create underline or underscore in HTML that matches var answerLetters//
  var dashes =[];
 
-
-
  var dash = "_";
  
 
@@ -62,6 +60,7 @@ var allGuess = [];
  	document.getElementById('guessed').innerHTML = allGuess;
  	document.getElementById('remaining').innerHTML = totalGuess;
  	document.getElementById('lines').innerHTML = display;
+ 	
 
  }
 
@@ -89,8 +88,28 @@ var allGuess = [];
 			losses ++;
 			document.getElementById('losses').innerHTML = losses;
 			reset();
+
+
+		}
+
+		if (totalGuess === 6){
+			document.getElementById("start").id = "start";
+		} else if (totalGuess === 5){
+			document.getElementById("start").id = "five";
+		} else if (totalGuess === 4){
+			document.getElementById("five").id = "four";
+		} else if (totalGuess === 3){
+			document.getElementById("four").id = "three";
+		} else if (totalGuess === 2){
+			document.getElementById("three").id = "two";
+		} else if (totalGuess === 1){
+			document.getElementById("two").id = "one";
+		} else{
+			document.getElementById("six").id = "start";
 		}
 	}
+
+
 
  	//Loop throught to find all instances of user guess//
  	while (idx != -1) {
@@ -118,6 +137,8 @@ var allGuess = [];
 
 document.getElementById("playAgain").onclick = function() {
    reset();
+
+
 };
 
 
