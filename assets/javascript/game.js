@@ -1,4 +1,3 @@
-
 //add list of holiday words//
 var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet', 
 'dancer', 'dasher', 'donner', 'eggnog', 'elves', 'goodwill', 'merry',
@@ -17,6 +16,11 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  var wins = 0;
 
  var losses = 0;
+
+ var display = [];
+
+ //create array for matching letter indices]
+ var indices = [];
  
 
  //find number of letters in var answer//
@@ -31,7 +35,7 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
  for (var i = 0; i < answerLength; i++){
  	//put dashes in HTML//
  	dashes.push(dash);
- }
+ 	 }
 
  var display = dashes.join('');	
  document.getElementById('lines').innerHTML = display;
@@ -41,46 +45,51 @@ var word =[ 'bells', 'blitzen', 'cards', 'chimney', 'comet',
 
 //create array with letters in it//
  var answerLetters = answer.split([]);
-
- 
+ console.log(answerLetters);
 
  //Get user input//
-	var all = [];	 
+	var allGuess = [];	 
 	document.onkeyup = function() {
     var userGuess = event.key;
-	document.getElementById('guessed').innerHTML = all;
+	document.getElementById('guessed').innerHTML = allGuess;
+	console.log(allGuess);
 
 
- 	//create array for matching letter indices]
- 	var indices = [];
+ 	
  	//find index match of user guess//
  	var idx = answerLetters.indexOf(userGuess);
+
+ 	if ( idx  === -1){
+			totalGuess -- ;
+			message.innerHTML = " Try again";
+	}
 
  	//Loop throught to find all instances of user guess//
  	while (idx != -1) {
  		//push index to array for storage//
   		dashes[idx] = userGuess;
-  		//incrementing idx by 1 to check next index//
- 		 idx = answerLetters.indexOf(userGuess, idx + 1);
- 		 var display = dashes.join('');
-	}
+  		var display = dashes.join('');
+  		//incrementing idx by 1 to check next index//	 
 		
 		document.getElementById('lines').innerHTML = display;
 		document.getElementById('remaining').innerHTML = totalGuess;
 		if (dashes.join('') === answer){
-			wins = wins + 1;
+			wins ++;
 			document.getElementById('wins').innerHTML = wins;
+			alert('youwin');
 		} else if ( totalGuess === 0){
-			losses = losses + 1;
+			losses ++;
 			document.getElementById('losses').innerHTML = losses;
-		}
+			alert('you lose');
 
- 	if ( idx === -1){
-				//If letters do not match subtract one guess//
-		totalGuess = totalGuess -1;
-	}else {
-		console.log('right');
- 	}
+		} else{
+			allGuess.push(userGuess);
+			document.getElementById('guessed').innerHTML = allGuess;
+			message.innerHTML = "Keep it going!"
+		}
+		idx = answerLetters.indexOf(userGuess, idx + 1);
+}
+
 }
 
 
