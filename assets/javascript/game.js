@@ -60,7 +60,7 @@ var allGuess = [];
  	document.getElementById('guessed').innerHTML = allGuess;
  	document.getElementById('remaining').innerHTML = totalGuess;
  	document.getElementById('lines').innerHTML = display;
- 	
+ 	// document.getElementById("start").id = "start";
 
  }
 
@@ -93,7 +93,7 @@ var allGuess = [];
 		}
 
 		if (totalGuess === 6){
-			document.getElementById("start").id = "start";
+			document.getElementById("one").id = "start";
 		} else if (totalGuess === 5){
 			document.getElementById("start").id = "five";
 		} else if (totalGuess === 4){
